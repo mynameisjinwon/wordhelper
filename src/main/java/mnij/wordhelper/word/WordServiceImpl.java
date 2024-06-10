@@ -1,10 +1,19 @@
 package mnij.wordhelper.word;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import java.util.List;
 
+@Component
 public class WordServiceImpl implements WordService {
 
-    WordRepository wordRepository = new MemoryWordRepository();
+    WordRepository wordRepository;
+
+    @Autowired
+    public WordServiceImpl(WordRepository wordRepository) {
+        this.wordRepository = wordRepository;
+    }
 
     @Override
     public void regWord(Word word) {

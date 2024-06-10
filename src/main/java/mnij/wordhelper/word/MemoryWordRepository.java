@@ -1,10 +1,13 @@
 package mnij.wordhelper.word;
 
+import org.springframework.stereotype.Component;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+@Component
 public class MemoryWordRepository implements WordRepository{
 
     private static final Map<String, Map<String, Word>> wordStore = new HashMap<>();
